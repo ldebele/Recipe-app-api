@@ -33,10 +33,8 @@ class UserSerializers(serializers.ModelSerializer):
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer for user authentication object"""
     email = serializers.CharField()
-    password = serializers.CharField(
-        style={'input-type': 'password'},
-        trim_whitespace=False
-    )
+    password = serializers.CharField(style={'input-type': 'password'}, trim_whitespace=False)
+
 
     def validate(self, attrs):
         """Validate and authenticate the user"""
